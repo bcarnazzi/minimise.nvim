@@ -785,6 +785,7 @@ later(function()
 	})
 end)
 
+-- markview.nvim
 now(function()
 	add({
 		source = "OXY2DEV/markview.nvim",
@@ -899,6 +900,7 @@ later(function()
 	vim.keymap.set("n", "<F7>", "<CMD>lua require('dapui').toggle()<CR>", { desc = "Debug: See last session result." })
 end)
 
+-- nvim-dap-virtual-text
 later(function()
 	add({
 		source = "theHamsta/nvim-dap-virtual-text",
