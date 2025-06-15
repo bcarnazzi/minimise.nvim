@@ -409,8 +409,8 @@ end)
 -- Mini Keymaps
 later(function()
 	local map_multistep = require("mini.keymap").map_multistep
-	map_multistep("i", "<Tab>", { "increase_indent", "pmenu_next", "jump_after_close" })
-	map_multistep("i", "<S-Tab>", { "pmenu_prev", "jump_before_open" })
+	map_multistep("i", "<Tab>", { "minisnippets_next", "increase_indent", "jump_after_close" })
+	map_multistep("i", "<S-Tab>", { "minisnippets_prev", "jump_before_open" })
 	map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
 	map_multistep("i", "<BS>", { "minipairs_bs", "decrease_indent" })
 
