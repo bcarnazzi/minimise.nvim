@@ -111,10 +111,17 @@ now(function()
 	})
 end)
 
--- Kanagawa colorscheme
+-- Mini Hues
 now(function()
-	add({ source = "rebelot/kanagawa.nvim" })
-	vim.cmd("colorscheme kanagawa")
+	require("mini.hues").setup({
+		background = "#1f1f27",
+		foreground = "#DBD7BD",
+		saturation = "high",
+		plugins = {
+			default = false,
+			["echasnovski/mini.nvim"] = true,
+		},
+	})
 end)
 
 -- Mini Icons
@@ -407,7 +414,7 @@ end)
 -- Mini Keymaps
 later(function()
 	local map_multistep = require("mini.keymap").map_multistep
-	map_multistep("i", "<Tab>", { "minisnippets_next", "increase_indent", "minisnippets_expand", "jump_after_close" })
+	map_multistep("i", "<Tab>", { "minisnippets_next", "increase_indent", "jump_after_close" })
 	map_multistep("i", "<S-Tab>", { "minisnippets_prev", "jump_before_open" })
 	map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
 	map_multistep("i", "<BS>", { "minipairs_bs", "decrease_indent" })
