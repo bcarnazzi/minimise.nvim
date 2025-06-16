@@ -434,6 +434,7 @@ later(function()
 
 	---@diagnostic disable-next-line: undefined-global
 	MiniMisc.setup_auto_root()
+	vim.keymap.set("n", "<Leader>bz", "<CMD>lua MiniMisc.zoom()<CR>", { desc = "Toggle Zoom Buffer" })
 end)
 
 -- Mini Move
@@ -538,18 +539,10 @@ later(function()
 end)
 
 -- Mini Tabline
--- later(function()
--- 	require("mini.tabline").setup({
--- 		show_icons = true,
--- 		format = function(buf_id, label)
--- 			local suffix = vim.bo[buf_id].modified and "+ " or ""
--- 			---@diagnostic disable-next-line: undefined-global
--- 			return MiniTabline.default_format(buf_id, label) .. suffix
--- 		end,
--- 		tabpage_section = "left",
--- 	})
--- 	vim.opt.showtabline = 1
--- end)
+later(function()
+	require("mini.tabline").setup()
+	vim.opt.showtabline = 1
+end)
 
 -- Mini Trailspace
 later(function()
@@ -725,13 +718,6 @@ end)
 now(function()
 	add({
 		source = "tpope/vim-sleuth",
-	})
-end)
-
--- vim-startuptime
-now(function()
-	add({
-		source = "dstein64/vim-startuptime",
 	})
 end)
 
