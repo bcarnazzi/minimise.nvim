@@ -106,17 +106,11 @@ now(function()
 	})
 end)
 
--- Mini Hues
 now(function()
-	require("mini.hues").setup({
-		background = "#1f1f27",
-		foreground = "#DBD7BD",
-		saturation = "high",
-		plugins = {
-			default = false,
-			["echasnovski/mini.nvim"] = true,
-		},
+	add({
+		source = "rebelot/kanagawa.nvim",
 	})
+	vim.cmd("colorscheme kanagawa")
 end)
 
 -- Mini Icons
@@ -195,6 +189,7 @@ end)
 --  - ci'  - [C]hange [I]nside [']quote
 later(function()
 	local gen_ai_spec = require("mini.extra").gen_ai_spec
+	local gen_spec = require("mini.ai").gen_spec
 	require("mini.ai").setup({
 		n_lines = 500,
 		custom_textobjects = {
@@ -203,6 +198,12 @@ later(function()
 			I = gen_ai_spec.indent(),
 			L = gen_ai_spec.line(),
 			N = gen_ai_spec.number(),
+			o = gen_spec.treesitter({ -- code block
+				a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+				i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+			}),
+			f = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
+			c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
 		},
 	})
 end)
@@ -436,6 +437,7 @@ later(function()
 
 	---@diagnostic disable-next-line: undefined-global
 	MiniMisc.setup_auto_root()
+
 	vim.keymap.set("n", "<Leader>bz", "<CMD>lua MiniMisc.zoom()<CR>", { desc = "Toggle Zoom Buffer" })
 end)
 
@@ -471,11 +473,7 @@ end)
 
 -- Mini Pick
 later(function()
-	require("mini.pick").setup({
-		mappings = {
-			choose_in_vsplit = "<C-CR>",
-		},
-	})
+	require("mini.pick").setup()
 
 	local config_path = vim.fn.stdpath("config")
 	vim.keymap.set(
@@ -600,6 +598,14 @@ now(function()
 	})
 end)
 
+-- nvim-treesitter-textobjects
+now(function()
+	add({
+		source = "nvim-treesitter/nvim-treesitter-textobjects",
+		depends = { "nvim-treesitter/nvim-treesitter" },
+	})
+end)
+
 -- nvim-lspconfig
 now(function()
 	add({
@@ -674,6 +680,7 @@ end)
 later(function()
 	add({
 		source = "nvim-treesitter/nvim-treesitter-context",
+		depends = { "nvim-treesitter/nvim-treesitter" },
 	})
 	require("treesitter-context").setup()
 end)
