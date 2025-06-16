@@ -730,6 +730,13 @@ now(function()
 	})
 end)
 
+-- vim-startuptime
+now(function()
+	add({
+		source = "dstein64/vim-startuptime",
+	})
+end)
+
 -- conform.nvim
 later(function()
 	add({
