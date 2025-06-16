@@ -123,7 +123,7 @@ now(function()
 
 	-- Make mini.completion use mini.icons
 	---@diagnostic disable-next-line: undefined-global
-	MiniDeps.later(MiniIcons.tweak_lsp_kind)
+	later(MiniIcons.tweak_lsp_kind)
 end)
 
 -- Mini Notify
