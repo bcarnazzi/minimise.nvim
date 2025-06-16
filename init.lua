@@ -409,7 +409,7 @@ end)
 -- Mini Keymaps
 later(function()
 	local map_multistep = require("mini.keymap").map_multistep
-	map_multistep("i", "<Tab>", { "minisnippets_next", "increase_indent", "jump_after_close" })
+	map_multistep("i", "<Tab>", { "minisnippets_next", "increase_indent", "minisnippets_expand", "jump_after_close" })
 	map_multistep("i", "<S-Tab>", { "minisnippets_prev", "jump_before_open" })
 	map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
 	map_multistep("i", "<BS>", { "minipairs_bs", "decrease_indent" })
@@ -981,9 +981,9 @@ later(function()
 end)
 
 -- Supermaven
-later(function()
-	add({
-		source = "supermaven-inc/supermaven-nvim",
-	})
-	require("supermaven-nvim").setup({})
-end)
+-- later(function()
+-- 	add({
+-- 		source = "supermaven-inc/supermaven-nvim",
+-- 	})
+-- 	require("supermaven-nvim").setup({})
+-- end)
