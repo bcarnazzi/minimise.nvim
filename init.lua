@@ -50,8 +50,6 @@ vim.o.expandtab = false
 -- end)
 
 -- UI
-vim.o.showmode = false -- conflict with mini.statusline
-vim.o.list = false -- conflict with mini.indentscope
 vim.opt.whichwrap = vim.opt.whichwrap + "<,>,h,l" -- eol wrap
 vim.o.scrolloff = 14
 vim.o.sidescrolloff = 14
