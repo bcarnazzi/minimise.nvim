@@ -851,13 +851,6 @@ later(function()
 	)
 end)
 
--- nvim-nio
-later(function()
-	add({
-		source = "nvim-neotest/nvim-nio",
-	})
-end)
-
 -- nvim-dap-ui
 later(function()
 	add({
