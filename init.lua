@@ -599,7 +599,7 @@ now(function()
 end)
 
 -- nvim-treesitter-textobjects
-now(function()
+later(function()
 	add({
 		source = "nvim-treesitter/nvim-treesitter-textobjects",
 		depends = { "nvim-treesitter/nvim-treesitter" },
@@ -796,7 +796,7 @@ later(function()
 end)
 
 -- markview.nvim
-now(function()
+later(function()
 	add({
 		source = "OXY2DEV/markview.nvim",
 	})
