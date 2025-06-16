@@ -95,11 +95,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Mini Basics
 now(function()
 	require("mini.basics").setup({
-		options = {
-			basic = true,
-			extra_ui = false,
-			win_borders = "bold",
-		},
 		mappings = {
 			basic = true,
 			windows = true,
