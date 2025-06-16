@@ -662,8 +662,18 @@ now(function()
 			--  Useful when you're not sure what type a variable is and you want to see
 			--  the definition of its *type*, not where it was *defined*.
 			map("grt", vim.lsp.buf.type_definition, "Goto Type Definition")
+
+			vim.cmd("TSContext enable")
 		end,
 	})
+end)
+
+-- nvim-treesitter-context
+later(function()
+	add({
+		source = "nvim-treesitter/nvim-treesitter-context",
+	})
+	require("treesitter-context").setup()
 end)
 
 -- Mini Snippets
