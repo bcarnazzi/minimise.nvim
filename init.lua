@@ -369,6 +369,11 @@ later(function()
 	require("mini.jump").setup()
 end)
 
+-- Mini Jump2d
+later(function()
+	require("mini.jump2d").setup()
+end)
+
 -- Mini Git
 later(function()
 	require("mini.git").setup()
