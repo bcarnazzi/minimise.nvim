@@ -106,6 +106,7 @@ now(function()
 	})
 end)
 
+-- Theme
 now(function()
 	add({
 		source = "rebelot/kanagawa.nvim",
