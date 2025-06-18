@@ -51,8 +51,8 @@ vim.o.expandtab = false
 
 -- UI
 vim.opt.whichwrap = vim.opt.whichwrap + "<,>,h,l" -- eol wrap
-vim.o.scrolloff = 14
-vim.o.sidescrolloff = 14
+vim.o.scrolloff = 10
+vim.o.sidescrolloff = 10
 vim.o.wrap = true
 
 -- GUI
