@@ -612,7 +612,7 @@ later(function()
 end)
 
 -- nvim-lspconfig
-now(function()
+later(function()
 	add({
 		source = "neovim/nvim-lspconfig",
 		-- NOTE no mason depends, we use mise instead
@@ -739,7 +739,7 @@ end)
 ------------------------------------------------------------------------------
 
 -- vim-sleuth
-now(function()
+later(function()
 	add({
 		source = "tpope/vim-sleuth",
 	})
