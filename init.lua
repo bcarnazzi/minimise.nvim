@@ -125,11 +125,8 @@ end)
 
 -- Mini Notify
 now(function()
-	require("mini.notify").setup({
-		-- lsp_progress = {
-		-- 	enable = false,
-		-- },
-	})
+	require("mini.notify").setup({})
+
 	vim.notify = require("mini.notify").make_notify()
 end)
 
@@ -926,7 +923,7 @@ later(function()
 	})
 
 	-- Install golang specific config
-	-- require dlv on your PATH
+	-- NOTE Require dlv on your PATH
 	require("dap-go").setup({
 		delve = {
 			-- On Windows delve must be run attached or it crashes.
@@ -988,11 +985,3 @@ later(function()
 		},
 	})
 end)
-
--- Supermaven
--- later(function()
--- 	add({
--- 		source = "supermaven-inc/supermaven-nvim",
--- 	})
--- 	require("supermaven-nvim").setup({})
--- end)
