@@ -610,13 +610,8 @@ later(function()
 
 	-- HACK manual installation of powershell_es is required
 	local bundle_path = vim.fn.stdpath("data") .. "/PowerShellEditorServices"
-	local temp_path = vim.fn.stdpath("cache")
-	local command_fmt =
-		[[& '%s/PowerShellEditorServices/Start-EditorServices.ps1' -BundledModulesPath '%s' -LogPath '%s/powershell_es.log' -SessionDetailsPath '%s/powershell_es.session.json' -FeatureFlags @() -AdditionalModules @() -HostName nvim -HostProfileId 0 -HostVersion 1.0.0 -Stdio -LogLevel Normal]]
-	local command = command_fmt:format(bundle_path, bundle_path, temp_path, temp_path)
 	vim.lsp.config("powershell_es", {
 		bundle_path = bundle_path,
-		cmd = { "pwsh", "-NoLogo", "-NoProfile", "-Command", command },
 	})
 
 	-- NOTE make sure your LSP servers are available on your PATH
