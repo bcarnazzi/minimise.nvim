@@ -474,7 +474,10 @@ later(function()
 	vim.keymap.set(
 		"n",
 		"<Leader>pc",
-		'<CMD>lua MiniPick.builtin.files({}, {source = {cwd = "' .. config_path .. '"}})<CR>',
+		-- '<CMD>lua MiniPick.builtin.files({}, {source = {cwd = "' .. config_path .. '"}})<CR>',
+		'<CMD>Pick explorer cwd="'
+			.. config_path
+			.. '"<CR>',
 		{ desc = "Pick Configuration" }
 	)
 
