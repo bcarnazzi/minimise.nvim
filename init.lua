@@ -751,7 +751,7 @@ later(function()
 		-- NOTE Please ensure your formatters are present on you path
 		formatters_by_ft = {
 			lua = { "stylua" },
-			go = { "goimports", "gofumpt" },
+			go = { "gofumpt" },
 			markdown = { "prettier" },
 			-- Conform will run multiple formatters sequentially
 			-- python = { "isort", "black" },
