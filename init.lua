@@ -14,7 +14,13 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 -- Set up 'mini.deps' (customize to your liking)
-require("mini.deps").setup({ path = { package = path_package } })
+require("mini.deps").setup({
+	job = {
+		n_threads = 8,
+		timeout = 30000,
+	},
+	path = { package = path_package },
+})
 
 -- Use 'mini.deps'. `now()` and `later()` are helpers for a safe two-stage
 -- startup and are optional.
@@ -108,10 +114,7 @@ end)
 
 -- Theme
 now(function()
-	add({
-		source = "rebelot/kanagawa.nvim",
-	})
-	vim.cmd("colorscheme kanagawa")
+	require("mini.hues").setup({ background = "#112541", foreground = "#c0c8cc", n_hues = 8, saturation = "mediumhigh" })
 end)
 
 -- Mini Icons
@@ -751,7 +754,7 @@ later(function()
 		-- NOTE Please ensure your formatters are present on you path
 		formatters_by_ft = {
 			lua = { "stylua" },
-			go = { "goimports", "gofumpt" },
+			go = { "gofumpt" },
 			markdown = { "prettier" },
 			-- Conform will run multiple formatters sequentially
 			-- python = { "isort", "black" },
