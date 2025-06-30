@@ -114,10 +114,7 @@ end)
 
 -- Theme
 now(function()
-	add({
-		source = "rebelot/kanagawa.nvim",
-	})
-	vim.cmd("colorscheme kanagawa")
+	require("mini.hues").setup({ background = "#112541", foreground = "#c0c8cc", n_hues = 8, saturation = "mediumhigh" })
 end)
 
 -- Mini Icons
