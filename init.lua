@@ -802,21 +802,6 @@ later(function()
 	})
 end)
 
--- markview.nvim
-later(function()
-	add({
-		source = "OXY2DEV/markview.nvim",
-	})
-
-	require("markview").setup({
-		preview = {
-			icon_provider = "mini", -- "internal" or "devicons"
-			filetypes = { "markdown", "codecompanion" },
-			ignore_buftypes = {},
-		},
-	})
-end)
-
 -- csvview
 later(function()
 	add({
