@@ -94,6 +94,14 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- CSV nowrap
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "csv",
+	callback = function()
+		vim.wo.wrap = false
+	end,
+})
+
 ------------------------------------------------------------------------------
 -- Safely execute immediately
 ------------------------------------------------------------------------------
@@ -803,7 +811,7 @@ later(function()
 end)
 
 -- csvview
-later(function()
+now(function()
 	add({
 		source = "hat0uma/csvview.nvim",
 	})
