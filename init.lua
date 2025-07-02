@@ -634,7 +634,7 @@ later(function()
 	})
 
 	-- NOTE make sure your LSP servers are available on your PATH
-	vim.lsp.enable({ "lua_ls", "gopls", "rust_analyzer", "powershell_es", "pyright", "marksman" })
+	vim.lsp.enable({ "lua_ls", "gopls", "rust_analyzer", "powershell_es", "pyright", "marksman", "yamlls" })
 
 	-- Diagnostic Config
 	-- See :help vim.diagnostic.Opts
