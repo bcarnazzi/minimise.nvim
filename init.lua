@@ -122,7 +122,8 @@ end)
 
 -- Theme
 now(function()
-	require("mini.hues").setup({ background = "#112541", foreground = "#c0c8cc", n_hues = 8, saturation = "mediumhigh" })
+	-- require("mini.hues").setup({ background = "#112541", foreground = "#c0c8cc", n_hues = 8, saturation = "mediumhigh" })
+	vim.cmd("colorscheme miniwinter")
 end)
 
 -- Mini Icons
